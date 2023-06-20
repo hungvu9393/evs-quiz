@@ -1,0 +1,655 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>QUIZ HOÀNG ĐẠO</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 14pt;
+            line-height: 16pt;
+            color: black;
+            font-family: Roboto;
+        }
+
+        input.square {
+            width: 60px;
+            height: 60px;
+            display: block;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        #khamPha,
+        #xemKetQua,
+        #chiaSe {
+            background-color: #462780;
+            color: #fff;
+        }
+
+        input,
+        button {
+            border: none;
+            outline: solid 1px #dadada;
+            box-shadow: 2px 4px 2px #dadada;
+            border-radius: 5px;
+        }
+
+        #next-block-1 .container,
+        #next-block-2 .container,
+        #next-block-3 .container {
+            min-height: 600px;
+            max-width: 700px;
+            background-image: url('img/2.png');
+            background-position: bottom;
+            background-repeat: no-repeat;
+            background-size: 100% cover;
+            color: #fff !important;
+        }
+
+        h3 {
+            color: #462780;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- place navbar here -->
+    </header>
+    <main>
+        <div class="container">
+            <h3 class="text-center mt-3">QUIZ HOÀNG ĐẠO</h3>
+            <div id="next-block-1" class="text-center">
+                <div class="container mt-3 p-3 p-md-5">
+                    <img src="img/1.png" class="w-auto mx-auto" height="240" alt="Ảnh minh họa"><br>
+                    <label class="mt-3" for="">Chọn ngày sinh của bạn</label><br>
+                    <input id="ngaySinh" class="mt-3 form-control mx-auto" type="date" style="width:250px"><br>
+                </div>
+                <button id="khamPha" onclick="khamPha()" class="mx-auto rounded mt-3 p-2 text-center d-block">Khám
+                    phá ngay</button>
+                <button onclick="troLai()" class="mx-auto rounded mt-3 p-1 text-center d-block">Trở
+                    lại</button>
+            </div>
+            <div id="next-block-2" class="text-center hide">
+                <div class="container mt-3 p-3 p-md-5">
+                    <div class="hstack gap-3 text-center m-auto d-inline-flex">
+                        <div class="box">
+                            <label for="">Ngày</label>
+                            <input id="bDay" type="text" class="square mt-3" maxlength="2" placeholder="22">
+                        </div>
+                        <div class="box">
+                            <label for="">Tháng</label>
+                            <input id="bMonth" type="text" class="square mt-3" maxlength="2" placeholder="02">
+                        </div>
+                        <div class="box">
+                            <label for="">Năm</label>
+                            <input id="bYear" type="text" class="square mt-3" maxlength="2" placeholder="2000">
+                        </div>
+                    </div>
+                </div>
+
+                <button id="xemKetQua" onclick="xemKetQua()" class="mx-auto rounded mt-3 p-2 text-center d-block">Xem
+                    kết quả</button>
+                <button onclick="troLai()" class="mx-auto rounded mt-3 p-1 text-center d-block">Trở
+                    lại</button>
+            </div>
+            <div id="next-block-3" class="text-center hide">
+                <div id="ketQua" class="container mt-3 p-3 p-md-5">
+                    <div id="aquarius" class="row">
+                        <div class="col-md-4">
+                            <label class="mt-3" for="">Hi Bảo Bình!</label><br>
+                            <img src="img/3.png" height="120" class="w-auto mx-auto" alt="Ảnh minh họa">
+                        </div>
+                        <div class="col-md-8">
+                            <p style="text-align: justify;">
+                                Bảo Bình (20/1- 18/2): Bạn là một Bảo Bình với tầm nhìn dài hạn. Bạn không phải tuýp
+                                người chỉ biết chờ đợi mà luôn tìm kiếm cơ hội trong những lĩnh vực khác nhau. Bảo Bình
+                                quan
+                                tâm đến nhiều vấn đề, có khả năng tiếp cận thông tin nhanh nhạy nên sẽ không quá bất ngờ
+                                khi
+                                phát hiện danh mục của Bảo Bình lại đa dạng thế đâu nhỉ!
+                            </p>
+                        </div>
+                        <div class="col-md-12 text-start mt-3">
+                            <p>
+                                Bạn có vẻ khá phù hợp với chiến lược đầu tư tăng trưởng đó!
+                                Là chiến lược đầu tư tập trung vào những ngành/doanh nghiệp được đánh giá là có tiềm
+                                năng phát triển vượt trội so với thị trường chung trong tương lai, các nhà đầu tư theo
+                                đuổi chiến lược đầu tư tăng trưởng có xu hướng tiếp cận các sản phẩm đầu tư của những
+                                doanh nghiệp có yếu tố cơ bản tốt trên thị trường, tốc độ tăng trưởng doanh thu và lợi
+                                nhuận cao, đảm bảo lợi nhuận thu về trong dài hạn.<br>
+                            </p>
+                            <p>
+                                Gợi ý mức độ thích hợp của bạn với các sản phẩm đầu tư:<br>
+                                Cổ phiếu: ⭐⭐⭐⭐ <br>
+                                Trái phiếu: ⭐⭐⭐⭐<br>
+                                Phái sinh: ⭐⭐<br>
+                                Hỗ trợ lãi suất: ⭐⭐
+                            </p>
+                        </div>
+                    </div>
+                    <div id="pisces" class="row">
+                        <div class="col-md-4">
+                            <label class="mt-3" for="">Hi Song Ngư!</label><br>
+                            <img src="img/3.png" height="120" class="w-auto mx-auto" alt="Ảnh minh họa">
+                        </div>
+                        <div class="col-md-8">
+                            <p style="text-align: justify;">
+                                Song Ngư (19/2- 20/3): Bạn là một Song Ngư sở hữu trực giác siêu tốt và nhanh nhạy ẩn
+                                trong vẻ ngoài có vẻ mơ màng, bay bổng. Cộng thêm tính cẩn thận vốn có, Song Ngư dường
+                                như đã nắm chắc danh hiệu “nhà đầu tư tài hoa ẩn mình” rồi đó !
+                            </p>
+                        </div>
+                        <div class="col-md-12 text-start mt-3">
+                            <p>
+                                Bạn có vẻ khá phù hợp với chiến lược đầu tư giá trị đó!
+                                Là chiến lược đầu tư kiếm lời từ việc tăng trưởng giá trị của doanh nghiệp trong trung &
+                                dài hạn, những nhà đầu tư theo đuổi chiến lược đầu tư giá trị thường tận dụng sự nhanh
+                                nhạy với thị trường để đánh giá và tìm ra doanh nghiệp có tiềm năng nhưng đang được định
+                                giá thấp hơn giá trị nội tại nhằm lựa chọn sản phẩm đầu tư phù hợp với mục tiêu đặt ra.
+                                <br>
+                            </p>
+                            <p>
+                                Gợi ý mức độ thích hợp của bạn với các sản phẩm đầu tư:<br>
+                                Cổ phiếu: ⭐⭐⭐⭐ <br>
+                                Trái phiếu: ⭐⭐⭐<br>
+                                Phái sinh: ⭐⭐⭐<br>
+                                Hỗ trợ lãi suất: ⭐⭐
+                            </p>
+                        </div>
+                    </div>
+                    <div id="aries" class="row">
+                        <div class="col-md-4">
+                            <label class="mt-3" for="">Hi Bạch Dương!</label><br>
+                            <img src="img/3.png" height="120" class="w-auto mx-auto" alt="Ảnh minh họa">
+                        </div>
+                        <div class="col-md-8">
+                            <p style="text-align: justify;">
+                                Bạch Dương (21/3- 20/4): Quyết đoán, độc lập, có khả năng thích ứng với sự cạnh tranh,
+                                lại ưa mạo hiểm, Bạch Dương dường như sinh ra đích thực là dành cho sự nghiệp đầu tư
+                                rồi. Nếu có một người bạn Bạch Dương, hãy chăm “soi” danh mục nhà bạn ấy nhé, có thể họ
+                                đang giấu một loạt hàng “hiếm có khó tìm” đó!
+                            </p>
+                        </div>
+                        <div class="col-md-12 text-start mt-3">
+                            <p>
+                                Bạn có vẻ khá phù hợp với chiến lược đầu tư lướt sóng đó!
+                                Đầu tư lướt sóng là chiến lược mà nhà đầu tư tìm kiếm lợi nhuận bằng cách tận dụng những
+                                biến động của thị trường trong ngắn hạn để tạo ra cơ hội đầu tư (tuy gọi là đầu tư ngắn
+                                hạn nhưng sóng có thể kéo dài trong vài tuần, vài tháng, thậm chí một năm). Ưa mạo hiểm,
+                                nhà đầu tư theo đuổi chiến lược này sẵn sàng đối diện với rủi ro và cạnh tranh để thu về
+                                lợi nhuận lớn. Chính vì thế, các sản phẩm đầu tư có sự linh hoạt cao luôn là lựa chọn
+                                hàng đầu của họ.<br>
+                            </p>
+                            <p>
+                                Gợi ý mức độ thích hợp của bạn với các sản phẩm đầu tư:<br>
+                                Cổ phiếu: ⭐⭐⭐⭐⭐ <br>
+                                Trái phiếu: ⭐⭐<br>
+                                Phái sinh: ⭐⭐⭐⭐<br>
+                                Hỗ trợ lãi suất: ⭐⭐⭐
+                            </p>
+                        </div>
+                    </div>
+                    <div id="taurus" class="row">
+                        <div class="col-md-4">
+                            <label class="mt-3" for="">Hi Kim Ngưu!</label><br>
+                            <img src="img/3.png" height="120" class="w-auto mx-auto" alt="Ảnh minh họa">
+                        </div>
+                        <div class="col-md-8">
+                            <p style="text-align: justify;">
+                                Kim Ngưu (21/4 - 20/5): Bạn là người có tầm nhìn xa trông rộng. Trong mọi phương diện,
+                                đặc biệt trong lĩnh vực đầu tư, khá khó để thấy Kim Ngưu bị ảnh hưởng bởi hiệu ứng đám
+                                đông. Thêm vào đó, nhờ bản tính kiên trì, cẩn trọng, danh mục của bạn luôn được duy trì
+                                cân bằng theo đúng chiến lược đặc trưng của 1 Kim Ngưu.
+                            </p>
+                        </div>
+                        <div class="col-md-12 text-start mt-3">
+                            <p>
+                                Bạn có vẻ khá phù hợp với chiến lược đầu tư cơ bản đó!
+                                Đầu tư cơ bản là chiến lược dựa vào phân tích vĩ mô, ngành và quan trọng nhất là báo cáo
+                                tài chính của doanh nghiệp để ra quyết định đầu tư. Nhà đầu tư theo chiến lược này
+                                thường ưu tiên sự an toàn nên có xu hướng tập trung vào các sản phẩm đầu tư của những
+                                doanh nghiệp uy tín và ổn định, có nền tảng tốt về doanh thu, lợi nhuận và triển vọng
+                                trong tương lai.
+                                <br>
+                            </p>
+                            <p>
+                                Gợi ý mức độ thích hợp của bạn với các sản phẩm đầu tư:<br>
+                                Cổ phiếu: ⭐⭐⭐⭐ <br>
+                                Trái phiếu: ⭐⭐⭐⭐<br>
+                                Phái sinh: ⭐⭐<br>
+                                Hỗ trợ lãi suất: ⭐⭐⭐
+                            </p>
+                        </div>
+                    </div>
+                    <div id="gemini" class="row">
+                        <div class="col-md-4">
+                            <label class="mt-3" for="">Hi Song Tử!</label><br>
+                            <img src="img/3.png" height="120" class="w-auto mx-auto" alt="Ảnh minh họa">
+                        </div>
+                        <div class="col-md-8">
+                            <p style="text-align: justify;">
+                                Song Tử (21/5- 21/6): Trời sinh thông minh, nhạy bén, Song Tử chắc chắn sẽ luôn nằm
+                                trong Top những nhà đầu tư tài ba. Bạn biết nhìn thời lựa thế, không bao giờ chạy theo
+                                những danh mục đầu tư không khả quan và có lẽ cũng vì thế mà trước mỗi quyết định đầu
+                                tư, Song Tử luôn có những suy xét kỹ lưỡng, cẩn trọng.
+                            </p>
+                        </div>
+                        <div class="col-md-12 text-start mt-3">
+                            <p>
+                                Bạn có vẻ khá phù hợp với chiến lược đầu tư tăng trưởng đó!
+                                Là chiến lược đầu tư tập trung vào những ngành/doanh nghiệp được đánh giá là có tiềm
+                                năng phát triển vượt trội so với thị trường chung trong tương lai, các nhà đầu tư theo
+                                đuổi chiến lược đầu tư tăng trưởng có xu hướng tiếp cận các sản phẩm đầu tư của những
+                                doanh nghiệp có yếu tố cơ bản tốt trên thị trường, tốc độ tăng trưởng doanh thu và lợi
+                                nhuận cao, đảm bảo lợi nhuận thu về trong dài hạn.
+                                <br>
+                            </p>
+                            <p>
+                                Gợi ý mức độ thích hợp của bạn với các sản phẩm đầu tư:<br>
+                                Cổ phiếu: ⭐⭐⭐⭐ <br>
+                                Trái phiếu: ⭐⭐⭐⭐<br>
+                                Phái sinh: ⭐⭐<br>
+                                Hỗ trợ lãi suất: ⭐⭐⭐
+                            </p>
+                        </div>
+                    </div>
+                    <div id="cancer" class="row">
+                        <div class="col-md-4">
+                            <label class="mt-3" for="">Hi Cự Giải!</label><br>
+                            <img src="img/3.png" height="120" class="w-auto mx-auto" alt="Ảnh minh họa">
+                        </div>
+                        <div class="col-md-8">
+                            <p style="text-align: justify;">
+                                Cự Giải (22/6- 22/7): Mang đặc trưng của một Cự Giải, bạn sẽ luôn hướng đến sự an toàn,
+                                nhất là trong chuyện đầu tư. Có lẽ vì vậy, những chú cua sẽ kiên nhẫn tìm kiếm và lựa
+                                chọn cho mình danh mục đầu tư có rủi ro thấp để hạn chế tối đa ảnh hưởng từ biến động
+                                thị trường.
+                            </p>
+                        </div>
+                        <div class="col-md-12 text-start mt-3">
+                            <p>
+                                Bạn có vẻ khá phù hợp với chiến lược đầu tư cơ bản đó!
+                                Đầu tư cơ bản là chiến lược dựa vào phân tích vĩ mô, ngành và quan trọng nhất là báo cáo
+                                tài chính của doanh nghiệp để ra quyết định đầu tư. Nhà đầu tư theo chiến lược này
+                                thường ưu tiên sự an toàn nên có xu hướng tập trung vào các sản phẩm đầu tư của những
+                                doanh nghiệp uy tín và ổn định, có nền tảng tốt về doanh thu, lợi nhuận và triển vọng
+                                trong tương lai.
+                                <br>
+                            </p>
+                            <p>
+                                Gợi ý mức độ thích hợp của bạn với các sản phẩm đầu tư:<br>
+                                Cổ phiếu: ⭐⭐⭐⭐ <br>
+                                Trái phiếu: ⭐⭐⭐⭐<br>
+                                Phái sinh: ⭐⭐<br>
+                                Hỗ trợ lãi suất: ⭐⭐
+                            </p>
+                        </div>
+                    </div>
+                    <div id="leo" class="row">
+                        <div class="col-md-4">
+                            <label class="mt-3" for="">Hi Sư Tử!</label><br>
+                            <img src="img/3.png" height="120" class="w-auto mx-auto" alt="Ảnh minh họa">
+                        </div>
+                        <div class="col-md-8">
+                            <p style="text-align: justify;">
+                                Sư Tử (23/7- 22/8): Là Cung hoàng đạo trời sinh với nhiều tham vọng, không quá ngạc
+                                nhiên khi Sư Tử là nhà đầu tư luôn tìm kiếm sự đổi mới trong danh mục nhất trong 12
+                                cung. Bạn làm việc nghiêm túc, độc lập và có sự kiên trì bền bỉ hơn ai hết nên dù có gặp
+                                biến động, bạn vẫn có thể kiểm soát và vượt qua.
+                            </p>
+                        </div>
+                        <div class="col-md-12 text-start mt-3">
+                            <p>
+                                Bạn có vẻ khá phù hợp với chiến lược đầu tư lướt sóng đó!
+                                Đầu tư lướt sóng là chiến lược mà nhà đầu tư tìm kiếm lợi nhuận bằng cách tận dụng những
+                                biến động của thị trường trong ngắn hạn để tạo ra cơ hội đầu tư (tuy gọi là đầu tư ngắn
+                                hạn nhưng sóng có thể kéo dài trong vài tuần, vài tháng, thậm chí một năm). Ưa mạo hiểm,
+                                nhà đầu tư theo đuổi chiến lược này sẵn sàng đối diện với rủi ro và cạnh tranh để thu về
+                                lợi nhuận lớn. Chính vì thế, các sản phẩm đầu tư có sự linh hoạt cao luôn là lựa chọn
+                                hàng đầu của họ.
+                                <br>
+                            </p>
+                            <p>
+                                Gợi ý mức độ thích hợp của bạn với các sản phẩm đầu tư:<br>
+                                Cổ phiếu: ⭐⭐⭐⭐⭐ <br>
+                                Trái phiếu: ⭐⭐<br>
+                                Phái sinh: ⭐⭐⭐⭐<br>
+                                Hỗ trợ lãi suất: ⭐⭐
+                            </p>
+                        </div>
+                    </div>
+                    <div id="virgo" class="row">
+                        <div class="col-md-4">
+                            <label class="mt-3" for="">Hi Xử Nữ!</label><br>
+                            <img src="img/3.png" height="120" class="w-auto mx-auto" alt="Ảnh minh họa">
+                        </div>
+                        <div class="col-md-8">
+                            <p style="text-align: justify;">
+                                Xử Nữ (23/8- 22/9): Xin chào chòm sao có khả năng phân tích, làm việc lý trí và tỉ mỉ
+                                nhất 12 cung hoàng đạo, XỬ NỮ! Không quá hứng thú với những danh mục “ngoài tầm kiểm
+                                soát”, bạn có vẻ chỉ đồng ý tiêu tốn thời gian và chấp nhận “xuống tiền” vào danh mục đã
+                                được suy nghĩ, tính toán kỹ càng để đạt lợi ích tốt nhất !
+                            </p>
+                        </div>
+                        <div class="col-md-12 text-start mt-3">
+                            <p>
+                                Bạn có vẻ khá phù hợp với chiến lược đầu tư cơ bản đó!
+                                Đầu tư cơ bản là chiến lược dựa vào phân tích vĩ mô, ngành và quan trọng nhất là báo cáo
+                                tài chính của doanh nghiệp để ra quyết định đầu tư. Nhà đầu tư theo chiến lược này
+                                thường ưu tiên sự an toàn nên có xu hướng tập trung vào các sản phẩm đầu tư của những
+                                doanh nghiệp uy tín và ổn định, có nền tảng tốt về doanh thu, lợi nhuận và triển vọng
+                                trong tương lai.
+                                <br>
+                            </p>
+                            <p>
+                                Gợi ý mức độ thích hợp của bạn với các sản phẩm đầu tư:<br>
+                                Cổ phiếu: ⭐⭐⭐ <br>
+                                Trái phiếu: ⭐⭐⭐⭐<br>
+                                Phái sinh: ⭐⭐⭐<br>
+                                Hỗ trợ lãi suất: ⭐⭐⭐
+                            </p>
+                        </div>
+                    </div>
+                    <div id="libra" class="row">
+                        <div class="col-md-4">
+                            <label class="mt-3" for="">Hi Thiên Bình!</label><br>
+                            <img src="img/3.png" height="120" class="w-auto mx-auto" alt="Ảnh minh họa">
+                        </div>
+                        <div class="col-md-8">
+                            <p style="text-align: justify;">
+                                Thiên Bình (23/9- 23/10): Mang đặc điểm của một Thiên Bình chính hiệu, bạn nhanh nhạy,
+                                linh hoạt và luôn hướng đến sự cân bằng trong bất kể hoàn cảnh nào. Bạn có thể mất rất
+                                nhiều thời gian để tính toán và thậm chí có lúc muốn bỏ cuộc giữa chừng nhưng một khi
+                                bạn đã quyết định đầu tư thì không ai có thể ngăn cản được.
+                            </p>
+                        </div>
+                        <div class="col-md-12 text-start mt-3">
+                            <p>
+                                Bạn có vẻ khá phù hợp với chiến lược đầu tư giá trị đó!
+                                Là chiến lược đầu tư kiếm lời từ việc tăng trưởng giá trị của doanh nghiệp trong trung &
+                                dài hạn, những nhà đầu tư theo đuổi chiến lược đầu tư giá trị thường tận dụng sự nhanh
+                                nhạy với thị trường để đánh giá và tìm ra doanh nghiệp có tiềm năng nhưng đang được định
+                                giá thấp hơn giá trị nội tại nhằm lựa chọn sản phẩm đầu tư phù hợp với mục tiêu đặt ra.
+                                <br>
+                            </p>
+                            <p>
+                                Gợi ý mức độ thích hợp của bạn với các sản phẩm đầu tư:<br>
+                                Cổ phiếu: ⭐⭐⭐⭐ <br>
+                                Trái phiếu: ⭐⭐⭐⭐<br>
+                                Phái sinh: ⭐⭐<br>
+                                Hỗ trợ lãi suất: ⭐⭐
+                            </p>
+                        </div>
+                    </div>
+                    <div id="scorpio" class="row">
+                        <div class="col-md-4">
+                            <label class="mt-3" for="">Hi Thiên Yết!</label><br>
+                            <img src="img/3.png" height="120" class="w-auto mx-auto" alt="Ảnh minh họa">
+                        </div>
+                        <div class="col-md-8">
+                            <p style="text-align: justify;">
+                                Thiên Yết (24/10- 22/11): Nổi danh là tuýp người thích chinh phục nhất trong 12 chòm
+                                sao, chẳng lạ gì nếu như 1
+                                Thiên Yết như bạn luôn sẵn sàng chinh chiến trên đấu trường đầu tư. Thiên Yết ưa mạo
+                                hiểm, có khả năng quan sát nhạy bén nên không chấp nhận lãng phí tài nguyên của mình vào
+                                những mục tiêu không xứng đáng. Có lẽ chính vì thế mà danh mục đầu tư của bạn đang là
+                                “kho báu” trong mắt các nhà đầu tư khác đó !
+
+                            </p>
+                        </div>
+                        <div class="col-md-12 text-start mt-3">
+                            <p>
+                                Bạn có vẻ khá phù hợp với chiến lược đầu tư lướt sóng đó!
+                                Đầu tư lướt sóng là chiến lược mà nhà đầu tư tìm kiếm lợi nhuận bằng cách tận dụng những
+                                biến động của thị trường trong ngắn hạn để tạo ra cơ hội đầu tư (tuy gọi là đầu tư ngắn
+                                hạn nhưng sóng có thể kéo dài trong vài tuần, vài tháng, thậm chí một năm). Ưa mạo hiểm,
+                                nhà đầu tư theo đuổi chiến lược này sẵn sàng đối diện với rủi ro và cạnh tranh để thu về
+                                lợi nhuận lớn. Chính vì thế, các sản phẩm đầu tư có sự linh hoạt cao luôn là lựa chọn
+                                hàng đầu của họ.<br>
+                            </p>
+                            <p>
+                                Gợi ý mức độ thích hợp của bạn với các sản phẩm đầu tư:<br>
+                                Cổ phiếu: ⭐⭐⭐⭐⭐ <br>
+                                Trái phiếu: ⭐⭐<br>
+                                Phái sinh: ⭐⭐⭐⭐<br>
+                                Hỗ trợ lãi suất: ⭐⭐
+                            </p>
+                        </div>
+                    </div>
+                    <div id="sagittarius" class="row">
+                        <div class="col-md-4">
+                            <label class="mt-3" for="">Hi Nhân Mã!</label><br>
+                            <img src="img/3.png" height="120" class="w-auto mx-auto" alt="Ảnh minh họa">
+                        </div>
+                        <div class="col-md-8">
+                            <p style="text-align: justify;">
+                                Nhân Mã (23/11- 21/12): Tự do, phóng khoáng và thích trải nghiệm, những tính cách này
+                                của Nhân Mã hoàn toàn phù hợp với một môi trường đầu tư mới và linh hoạt như chứng
+                                khoán. Cộng thêm khả năng xử lý tình huống tài tình, có lẽ Nhân Mã cũng đã nắm bắt được
+                                không ít cơ hội để đa dạng hóa danh mục và giúp tài khoản khỏe mạnh hơn nhiều đúng không
+                            </p>
+                        </div>
+                        <div class="col-md-12 text-start mt-3">
+                            <p>
+                                Bạn có vẻ khá phù hợp với chiến lược đầu tư lướt sóng đó!
+                                Đầu tư lướt sóng là chiến lược mà nhà đầu tư tìm kiếm lợi nhuận bằng cách tận dụng những
+                                biến động của thị trường trong ngắn hạn để tạo ra cơ hội đầu tư (tuy gọi là đầu tư ngắn
+                                hạn nhưng sóng có thể kéo dài trong vài tuần, vài tháng, thậm chí một năm). Ưa mạo hiểm,
+                                nhà đầu tư theo đuổi chiến lược này sẵn sàng đối diện với rủi ro và cạnh tranh để thu về
+                                lợi nhuận lớn. Chính vì thế, các sản phẩm đầu tư có sự linh hoạt cao luôn là lựa chọn
+                                hàng đầu của họ.<br>
+                            </p>
+                            <p>
+                                Gợi ý mức độ thích hợp của bạn với các sản phẩm đầu tư:<br>
+                                Cổ phiếu: ⭐⭐⭐⭐ <br>
+                                Trái phiếu: ⭐⭐⭐<br>
+                                Phái sinh: ⭐⭐⭐<br>
+                                Hỗ trợ lãi suất: ⭐⭐
+                            </p>
+                        </div>
+                    </div>
+                    <div id="capricorn" class="row">
+                        <div class="col-md-4">
+                            <label class="mt-3" for="">Hi Ma Kết!</label><br>
+                            <img src="img/3.png" height="120" class="w-auto mx-auto" alt="Ảnh minh họa">
+                        </div>
+                        <div class="col-md-8">
+                            <p style="text-align: justify;">
+                                Ma Kết (22/12- 19/1): Là chòm sao hiểu rõ giá trị của việc đầu tư, Ma Kết sẽ không dễ
+                                dàng bỏ cuộc giữa chừng vì bất kỳ lý do gì. Có lẽ vì vậy, Ma Kết sẽ rất kỹ tính trong
+                                việc xây dựng danh mục đầu tư và thường hướng đến những tài sản ít rủi ro, tránh chọn
+                                kênh đầu tư gặp quá nhiều biến động.
+                            </p>
+                        </div>
+                        <div class="col-md-12 text-start mt-3">
+                            <p>
+                                Bạn có vẻ khá phù hợp với chiến lược đầu tư cơ bản đó!
+                                Đầu tư cơ bản là chiến lược dựa vào phân tích vĩ mô, ngành và quan trọng nhất là báo cáo
+                                tài chính của doanh nghiệp để ra quyết định đầu tư. Nhà đầu tư theo chiến lược này
+                                thường ưu tiên sự an toàn nên có xu hướng tập trung vào các sản phẩm đầu tư của những
+                                doanh nghiệp uy tín và ổn định, có nền tảng tốt về doanh thu, lợi nhuận và triển vọng
+                                trong tương lai.
+                                <br>
+                            </p>
+                            <p>
+                                Gợi ý mức độ thích hợp của bạn với các sản phẩm đầu tư:<br>
+                                Cổ phiếu: ⭐⭐⭐⭐ <br>
+                                Trái phiếu: ⭐⭐⭐⭐<br>
+                                Phái sinh: ⭐⭐<br>
+                                Hỗ trợ lãi suất: ⭐⭐
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="chiaSe" onclick="chiaSe()" class="mx-auto rounded mt-3 p-2 text-center d-block">Chia
+                    sẻ</button>
+                <button onclick="troLai()" class="mx-auto rounded mt-3 p-1 text-center d-block">Trở
+                    lại</button>
+            </div>
+        </div>
+        <!-- SCript -->
+        <script>
+            var bDay = document.getElementById('bDay');
+            var bMonth = document.getElementById('bMonth');
+            var bYear = document.getElementById('bYear');
+            var ngaySinh = document.getElementById('ngaySinh');
+
+            function troLai() {
+                switch (whereIs) {
+                    case 1: break;
+                    case 2:
+                        $("#next-block-1").show();
+                        $("#next-block-2").hide();
+                        whereIs = 1;
+                        break;
+                    case 3:
+                        $("#next-block-2").show();
+                        $("#next-block-3").hide();
+                        whereIs = 2;
+                        break;
+                    default: break;
+                }
+            }
+
+            function khamPha() {
+                if (ngaySinh.value != "") {
+                    bDay.value = ngaySinh.value.split("-")[2];
+                    bMonth.value = ngaySinh.value.split("-")[1];
+                    bYear.value = ngaySinh.value.split("-")[0];
+                    $("#next-block-1").hide();
+                    $("#next-block-2").show();
+                    whereIs = 2;
+                }
+                else {
+                    alert("Điền vào ngày sinh!");
+                }
+            }
+            function xemKetQua() {
+                var zodiac = findZodiac(parseInt(bDay.value), bMonth.value);
+                $("#ketQua > div").removeClass("d-flex");
+                $("#ketQua > div").addClass("d-none");
+                $("#" + zodiac).removeClass("d-none");
+                $("#" + zodiac).addClass("d-flex");
+                $("#next-block-2").hide();
+                $("#next-block-3").show();
+                whereIs = 3;
+            }
+            function chiaSe() {
+                alert("Chưa có tính năng chia sẻ!");
+            }
+
+            function findZodiac(day, bMonth) {
+                var zodiac = "";
+                switch (bMonth) {
+                    case "01":
+                        if (day < 20)
+                            zodiac = "capricorn";
+                        else
+                            zodiac = "aquarius";
+                        break;
+                    case "02":
+                        if (day < 19)
+                            zodiac = "aquarius";
+                        else
+                            zodiac = "pisces";
+                        break;
+                    case "03":
+                        if (day < 21)
+                            zodiac = "pisces";
+                        else
+                            zodiac = "aries";
+                        break;
+                    case "04":
+                        if (day < 20)
+                            zodiac = "aries";
+                        else
+                            zodiac = "taurus";
+                        break;
+                    case "05":
+                        if (day < 21)
+                            zodiac = "taurus";
+                        else
+                            zodiac = "gemini";
+                        break;
+                    case "06":
+                        if (day < 21)
+                            zodiac = "gemini";
+                        else
+                            zodiac = "cancer";
+                        break;
+                    case "07":
+                        if (day < 23)
+                            zodiac = "cancer";
+                        else
+                            zodiac = "leo";
+                        break;
+                    case "08":
+                        if (day < 23)
+                            zodiac = "leo";
+                        else
+                            zodiac = "virgo";
+                        break;
+                    case "09":
+                        if (day < 23)
+                            zodiac = "virgo";
+                        else
+                            zodiac = "libra";
+                        break;
+                    case "10":
+                        if (day < 23)
+                            zodiac = "libra";
+                        else
+                            zodiac = "scorpio";
+                        break;
+                    case "11":
+                        if (day < 22)
+                            zodiac = "scorpio";
+                        else
+                            zodiac = "sagittarius";
+                        break;
+                    case "12":
+                        if (day < 22)
+                            zodiac = "sagittarius";
+                        else
+                            zodiac = "capricorn"
+                        break;
+                }
+                return zodiac;
+            }
+        </script>
+    </main>
+
+    <footer>
+        <!-- place footer here -->
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>
