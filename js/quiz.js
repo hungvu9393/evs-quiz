@@ -46,7 +46,7 @@ function xemKetQua() {
 }
 
 function chiaSe() {
-    alert("Chưa có tính năng chia sẻ!");
+    window.location.href = '/?result=1';
 }
 
 function findZodiac(day, bMonth) {
@@ -131,6 +131,9 @@ function findZodiac(day, bMonth) {
 function ketQua() {
     const queryString = window.location.search;
     console.log(queryString);
+    alert(queryString);
 }
 
 ketQua();
+
+//?https://github.com/hungvu9393/evsquiz/blob/main/index.html
