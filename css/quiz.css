@@ -42,7 +42,7 @@ button {
 #next-block-3 .container {
     min-height: 600px;
     max-width: 700px;
-    background-image: url('img/2.png');
+    background-image: url('/img/2.png');
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: 100% cover;
