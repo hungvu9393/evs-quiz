@@ -46,7 +46,7 @@ function xemKetQua() {
 }
 
 function chiaSe() {
-    window.location.href = '/?result=1';
+    alert("Chưa có chức năng chia sẻ");
 }
 
 function findZodiac(day, bMonth) {
