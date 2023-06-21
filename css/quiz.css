@@ -42,7 +42,7 @@ button {
 #next-block-3 .container {
     min-height: 600px;
     max-width: 700px;
-    background-image: url('/img/2.png');
+    background-image: url('https://rawcdn.githack.com/hungvu9393/evs-quiz/ba9ad180c45e47b6d4752de85594b06f27b5fbbf/img/2.png');
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: 100% cover;
