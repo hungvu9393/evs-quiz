@@ -127,13 +127,3 @@ function findZodiac(day, bMonth) {
     }
     return zodiac;
 }
-
-function ketQua() {
-    const queryString = window.location.search;
-    console.log(queryString);
-    alert(queryString);
-}
-
-ketQua();
-
-//?https://github.com/hungvu9393/evsquiz/blob/main/index.html
